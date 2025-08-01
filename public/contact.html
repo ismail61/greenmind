@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contact GreenMind for environmental questions, feedback, or collaboration opportunities">
+    <meta name="keywords" content="contact, environmental questions, feedback, collaboration, green initiatives">
+    <title>Contact Us - GreenMind</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+</head>
+<body>
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <img src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?w=40&h=40&fit=crop&crop=center&auto=format&q=80" alt="GreenMind Logo" class="logo-img">
+                    <span class="logo-text">GreenMind</span>
+                </div>
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="learn.html" class="nav-link">Learn</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="quiz.html" class="nav-link">Quiz</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="contact.html" class="nav-link active">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="about.html" class="nav-link">About</a>
+                    </li>
+                </ul>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main-content">
+        <!-- Contact Header -->
+        <section class="contact-header">
+            <div class="container">
+                <h1 class="page-title">Contact Us</h1>
+                <p class="page-subtitle">We'd love to hear from you! Share your thoughts, questions, or ideas about environmental conservation.</p>
+            </div>
+        </section>
+
+        <!-- Contact Content -->
+        <section class="contact-section">
+            <div class="container">
+                <div class="contact-grid">
+                    <!-- Contact Form -->
+                    <div class="contact-form-container">
+                        <h2>Send us a Message</h2>
+                        <p class="form-description">
+                            Have a question about environmental conservation? Want to share your green initiatives? 
+                            We're here to help and would love to connect with you!
+                        </p>
+
+                        <form id="contact-form" class="contact-form" novalidate>
+                            <div class="form-group">
+                                <label for="name" class="form-label">
+                                    Full Name <span class="required">*</span>
+                                </label>
+                                <input 
+                                    type="text" 
+                                    id="name" 
+                                    name="name" 
+                                    class="form-input" 
+                                    required 
+                                    maxlength="100"
+                                    autocomplete="name"
+                                    placeholder="Enter your full name"
+                                >
+                                <div class="error-message" id="name-error"></div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="email" class="form-label">
+                                    Email Address <span class="required">*</span>
+                                </label>
+                                <input 
+                                    type="email" 
+                                    id="email" 
+                                    name="email" 
+                                    class="form-input" 
+                                    required 
+                                    maxlength="255"
+                                    autocomplete="email"
+                                    placeholder="Enter your email address"
+                                >
+                                <div class="error-message" id="email-error"></div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="subject" class="form-label">
+                                    Subject <span class="required">*</span>
+                                </label>
+                                <select id="subject" name="subject" class="form-select" required>
+                                    <option value="">Select a subject</option>
+                                    <option value="general">General Question</option>
+                                    <option value="recycling">Recycling Inquiry</option>
+                                    <option value="energy">Energy Conservation</option>
+                                    <option value="water">Water Conservation</option>
+                                    <option value="climate">Climate Change</option>
+                                    <option value="feedback">Website Feedback</option>
+                                    <option value="collaboration">Collaboration Opportunity</option>
+                                    <option value="other">Other</option>
+                                </select>
+                                <div class="error-message" id="subject-error"></div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="message" class="form-label">
+                                    Message <span class="required">*</span>
+                                </label>
+                                <textarea 
+                                    id="message" 
+                                    name="message" 
+                                    class="form-textarea" 
+                                    rows="6" 
+                                    required 
+                                    maxlength="1000"
+                                    placeholder="Write your message here... (max 1000 characters)"
+                                ></textarea>
+                                <div class="character-count">
+                                    <span id="char-count">0</span>/1000 characters
+                                </div>
+                                <div class="error-message" id="message-error"></div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="checkbox-container">
+                                    <input type="checkbox" id="newsletter" name="newsletter" class="checkbox-input">
+                                    <span class="checkbox-custom"></span>
+                                    <span class="checkbox-label">
+                                        I would like to receive environmental tips and updates (optional)
+                                    </span>
+                                </label>
+                            </div>
+
+                            <div class="form-actions">
+                                <button type="submit" id="submit-btn" class="btn btn-primary">
+                                    <span class="btn-text">Send Message</span>
+                                    <span class="btn-loading" style="display: none;">
+                                        <span class="loading-spinner"></span>
+                                        Sending...
+                                    </span>
+                                </button>
+                                <button type="reset" class="btn btn-secondary">Clear Form</button>
+                            </div>
+                        </form>
+
+                        <!-- Success/Error Messages -->
+                        <div id="form-success" class="form-message success-message" style="display: none;">
+                            <div class="message-icon">✅</div>
+                            <div class="message-content">
+                                <h3>Message Sent Successfully!</h3>
+                                <p>Thank you for reaching out. We'll get back to you within 24 hours.</p>
+                            </div>
+                        </div>
+
+                        <div id="form-error" class="form-message error-message" style="display: none;">
+                            <div class="message-icon">❌</div>
+                            <div class="message-content">
+                                <h3>Error Sending Message</h3>
+                                <p id="error-text">Something went wrong. Please try again later.</p>
+                                <button id="retry-btn" class="btn btn-outline">Try Again</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Contact Information -->
+                    <div class="contact-info">
+                        <h2>Get in Touch</h2>
+                        
+                        <div class="contact-details">
+                            <div class="contact-item">
+                                <div class="contact-icon">📧</div>
+                                <div class="contact-content">
+                                    <h3>Email</h3>
+                                    <p>greenmind@adu.ac.ae</p>
+                                    <small>We respond within 24 hours</small>
+                                </div>
+                            </div>
+
+                            <div class="contact-item">
+                                <div class="contact-icon">🎓</div>
+                                <div class="contact-content">
+                                    <h3>University</h3>
+                                    <p>Abu Dhabi University</p>
+                                    <small>Information Technology Department</small>
+                                </div>
+                            </div>
+
+                            <div class="contact-item">
+                                <div class="contact-icon">📚</div>
+                                <div class="contact-content">
+                                    <h3>Course</h3>
+                                    <p>ITE410 - Group 6</p>
+                                    <small>MEAN Stack Project</small>
+                                </div>
+                            </div>
+
+                            <div class="contact-item">
+                                <div class="contact-icon">🌍</div>
+                                <div class="contact-content">
+                                    <h3>Mission</h3>
+                                    <p>Environmental Education</p>
+                                    <small>Promoting sustainable living</small>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="contact-social">
+                            <h3>Follow Environmental News</h3>
+                            <div class="social-links">
+                                <a href="#" class="social-link" title="Environmental News">
+                                    <span class="social-icon">🌱</span>
+                                    <span>Green News</span>
+                                </a>
+                                <a href="#" class="social-link" title="Climate Updates">
+                                    <span class="social-icon">🌡️</span>
+                                    <span>Climate Info</span>
+                                </a>
+                                <a href="#" class="social-link" title="Sustainability Tips">
+                                    <span class="social-icon">♻️</span>
+                                    <span>Eco Tips</span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="contact-hours">
+                            <h3>Response Times</h3>
+                            <div class="hours-list">
+                                <div class="hours-item">
+                                    <span class="hours-day">General Inquiries</span>
+                                    <span class="hours-time">Within 24 hours</span>
+                                </div>
+                                <div class="hours-item">
+                                    <span class="hours-day">Technical Support</span>
+                                    <span class="hours-time">Within 48 hours</span>
+                                </div>
+                                <div class="hours-item">
+                                    <span class="hours-day">Collaboration</span>
+                                    <span class="hours-time">Within 72 hours</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="faq-section">
+            <div class="container">
+                <h2 class="section-title">Frequently Asked Questions</h2>
+                <div class="faq-grid">
+                    <div class="faq-item">
+                        <h3>How can I get involved in environmental conservation?</h3>
+                        <p>Start with small steps like recycling, conserving energy and water, using sustainable transportation, and spreading awareness. Every action counts!</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>What are the most effective ways to reduce my carbon footprint?</h3>
+                        <p>Focus on transportation choices, energy consumption, diet changes, and waste reduction. Our Learn page has detailed guides for each area.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>How can I learn more about environmental issues?</h3>
+                        <p>Visit our Learn page for comprehensive information, take our quiz to test your knowledge, and stay updated with environmental news and research.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>Can I contribute content to GreenMind?</h3>
+                        <p>We welcome contributions! Contact us with your ideas, research, or environmental initiatives that you'd like to share with our community.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3 class="footer-title">GreenMind</h3>
+                    <p class="footer-description">
+                        Empowering individuals with knowledge and tools to create a sustainable future 
+                        for our planet and future generations.
+                    </p>
+                </div>
+                <div class="footer-section">
+                    <h4 class="footer-subtitle">Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="learn.html">Learn</a></li>
+                        <li><a href="quiz.html">Quiz</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="about.html">About</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4 class="footer-subtitle">Topics</h4>
+                    <ul class="footer-links">
+                        <li><a href="learn.html#recycling">Recycling</a></li>
+                        <li><a href="learn.html#energy">Energy Conservation</a></li>
+                        <li><a href="learn.html#water">Water Conservation</a></li>
+                        <li><a href="learn.html#climate">Climate Change</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4 class="footer-subtitle">Project Info</h4>
+                    <p class="footer-text">
+                        <strong>Course:</strong> ITE410<br>
+                        <strong>Group:</strong> 6<br>
+                        <strong>Technology:</strong> MEAN Stack<br>
+                        <strong>University:</strong> ADU
+                    </p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 GreenMind. Created for educational purposes. Group 6 - ITE410 Project.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/contact.js"></script>
+</body>
+</html>

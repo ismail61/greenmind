@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Test your environmental knowledge with our interactive quiz about recycling, energy conservation, and sustainability">
+    <meta name="keywords" content="environmental quiz, recycling quiz, sustainability test, green knowledge">
+    <title>Environmental Quiz - GreenMind</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+</head>
+<body>
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <img src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?w=40&h=40&fit=crop&crop=center&auto=format&q=80" alt="GreenMind Logo" class="logo-img">
+                    <span class="logo-text">GreenMind</span>
+                </div>
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="learn.html" class="nav-link">Learn</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="quiz.html" class="nav-link active">Quiz</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="contact.html" class="nav-link">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="about.html" class="nav-link">About</a>
+                    </li>
+                </ul>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main-content">
+        <!-- Quiz Header -->
+        <section class="quiz-header">
+            <div class="container">
+                <h1 class="page-title">Environmental Knowledge Quiz</h1>
+                <p class="page-subtitle">Test your understanding of environmental conservation and sustainability</p>
+            </div>
+        </section>
+
+        <!-- Quiz Container -->
+        <section class="quiz-section">
+            <div class="container">
+                <div class="quiz-container">
+                    <!-- Quiz Welcome Screen -->
+                    <div id="quiz-welcome" class="quiz-welcome">
+                        <div class="quiz-welcome-bg">
+                            <img src="https://images.unsplash.com/photo-1569163139394-de4e4f43e4e3?w=1200&h=800&fit=crop&crop=center&auto=format&q=60" alt="Environmental Background" class="welcome-bg-img">
+                        </div>
+                        <div class="welcome-content">
+                            <div class="welcome-icon">🌱</div>
+                            <h2>Welcome to the GreenMind Quiz!</h2>
+                            <p>Test your knowledge about environmental conservation, recycling, energy saving, and sustainable living. Join thousands of eco-warriors in making a difference!</p>
+                            
+                            <div class="quiz-info">
+                                <div class="info-item">
+                                    <span class="info-icon">📋</span>
+                                    <span class="info-text">10 multiple choice questions</span>
+                                </div>
+                                <div class="info-item">
+                                    <span class="info-icon">⏱️</span>
+                                    <span class="info-text">No time limit - take your time</span>
+                                </div>
+                                <div class="info-item">
+                                    <span class="info-icon">🏆</span>
+                                    <span class="info-text">Get your score and feedback</span>
+                                </div>
+                            </div>
+                            
+                            <div class="quiz-instructions">
+                                <h3>Instructions:</h3>
+                                <ul>
+                                    <li>Read each question carefully</li>
+                                    <li>Select the best answer from the options provided</li>
+                                    <li>You can review and change your answers before submitting</li>
+                                    <li>Click "Start Quiz" when you're ready to begin</li>
+                                </ul>
+                            </div>
+                            
+                            <button id="start-quiz-btn" class="btn btn-primary">Start Quiz</button>
+                        </div>
+                    </div>
+
+                    <!-- Quiz Questions -->
+                    <div id="quiz-content" class="quiz-content" style="display: none;">
+                        <div class="quiz-progress">
+                            <div class="progress-bar">
+                                <div id="progress-fill" class="progress-fill"></div>
+                            </div>
+                            <span id="question-counter" class="question-counter">Question 1 of 10</span>
+                        </div>
+
+                        <div id="quiz-form" class="quiz-form">
+                            <!-- Questions will be dynamically generated here -->
+                        </div>
+
+                        <div class="quiz-navigation">
+                            <button id="prev-btn" class="btn btn-secondary" disabled>Previous</button>
+                            <button id="next-btn" class="btn btn-primary">Next</button>
+                            <button id="submit-btn" class="btn btn-success" style="display: none;">Submit Quiz</button>
+                        </div>
+
+                        <div class="quiz-review">
+                            <button id="review-btn" class="btn btn-outline" style="display: none;">Review Answers</button>
+                        </div>
+                    </div>
+
+                    <!-- Quiz Results -->
+                    <div id="quiz-results" class="quiz-results" style="display: none;">
+                        <div class="results-content">
+                            <div class="results-header">
+                                <h2>Quiz Complete!</h2>
+                                <div id="score-display" class="score-display">
+                                    <div class="score-circle">
+                                        <span id="score-percentage">0%</span>
+                                    </div>
+                                    <div class="score-details">
+                                        <p>You scored <span id="correct-answers">0</span> out of <span id="total-questions">10</span> questions correctly!</p>
+                                        <p id="performance-message" class="performance-message"></p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="results-breakdown">
+                                <h3>Your Performance</h3>
+                                <div id="category-breakdown" class="category-breakdown">
+                                    <!-- Category performance will be shown here -->
+                                </div>
+                            </div>
+
+                            <div class="results-actions">
+                                <button id="retake-quiz-btn" class="btn btn-primary">Retake Quiz</button>
+                                <a href="learn.html" class="btn btn-secondary">Learn More</a>
+                                <!-- <button id="share-results-btn" class="btn btn-outline">Share Results</button> -->
+                            </div>
+
+                            <div class="results-tips">
+                                <h3>Environmental Tips for You</h3>
+                                <div id="personalized-tips" class="personalized-tips">
+                                    <!-- Personalized tips based on performance -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Loading State -->
+                    <div id="quiz-loading" class="quiz-loading" style="display: none;">
+                        <div class="loading-spinner"></div>
+                        <p>Submitting your quiz...</p>
+                    </div>
+
+                    <!-- Error State -->
+                    <div id="quiz-error" class="quiz-error" style="display: none;">
+                        <div class="error-content">
+                            <h3>Oops! Something went wrong</h3>
+                            <p id="error-message">There was an error submitting your quiz. Please try again.</p>
+                            <button id="retry-submit-btn" class="btn btn-primary">Try Again</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Additional Info Section -->
+        <section class="quiz-info-section">
+            <div class="container">
+                <div class="info-grid">
+                    <div class="info-card">
+                        <h3>Why Take This Quiz?</h3>
+                        <p>Testing your knowledge helps reinforce what you've learned about environmental conservation. It's a fun way to identify areas where you can improve your green practices.</p>
+                    </div>
+                    <div class="info-card">
+                        <h3>Learn from Mistakes</h3>
+                        <p>Each question comes with explanations to help you understand the correct answers. Use this as a learning opportunity to become more environmentally conscious.</p>
+                    </div>
+                    <div class="info-card">
+                        <h3>Share Your Knowledge</h3>
+                        <p>After completing the quiz, share your results with friends and family to spread environmental awareness and encourage others to adopt sustainable practices.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3 class="footer-title">GreenMind</h3>
+                    <p class="footer-description">
+                        Empowering individuals with knowledge and tools to create a sustainable future 
+                        for our planet and future generations.
+                    </p>
+                </div>
+                <div class="footer-section">
+                    <h4 class="footer-subtitle">Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="learn.html">Learn</a></li>
+                        <li><a href="quiz.html">Quiz</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="about.html">About</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4 class="footer-subtitle">Topics</h4>
+                    <ul class="footer-links">
+                        <li><a href="learn.html#recycling">Recycling</a></li>
+                        <li><a href="learn.html#energy">Energy Conservation</a></li>
+                        <li><a href="learn.html#water">Water Conservation</a></li>
+                        <li><a href="learn.html#climate">Climate Change</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4 class="footer-subtitle">Project Info</h4>
+                    <p class="footer-text">
+                        <strong>Course:</strong> ITE410<br>
+                        <strong>Group:</strong> 6<br>
+                        <strong>Technology:</strong> MEAN Stack<br>
+                        <strong>University:</strong> ADU
+                    </p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 GreenMind. Created for educational purposes. Group 6 - ITE410 Project.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/quiz.js"></script>
+</body>
+</html>
